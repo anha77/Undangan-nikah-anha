@@ -1,125 +1,77 @@
-/* styles.css */
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #5f9ea0, #add8e6); /* Soft blue to lighter blue */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    background-size: cover; /* Make background image cover the screen */
-}
-
-.container {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque background */
-    border-radius: 15px;
-    padding: 40px;
-    width: 90%; /* Make container more responsive */
-    max-width: 800px; /* Max width for larger screens */
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-header h1 {
-    font-size: 3.5em;
-    color: #003366; /* Deep blue */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px;
-}
-
-header h2 {
-    font-size: 2.8em;
-    color: #2a4d6e; /* Soft navy blue */
-    margin-top: -10px;
-    font-weight: 400;
-}
-
-.content p {
-    font-size: 1.5em;
-    color: #003366;
-    margin: 15px 0;
-    line-height: 1.5; /* Increase line height for better readability */
-}
-
-footer p {
-    font-size: 1.2em;
-    color: #333;
-    margin-top: 20px;
-}
-
-footer {
-    margin-top: 30px;
-    font-size: 1.2em;
-    color: #2a4d6e;
-}
-
-@keyframes waves {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-body::after {
-    content: '';
-    position: absolute;
-    top: 90%;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url('https://www.transparenttextures.com/patterns/cutout.png') repeat-x;
-    animation: waves 10s linear infinite;
-    z-index: -1;
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5em; /* Slightly smaller font size on small screens */
-    }
-
-    header h2 {
-        font-size: 2.2em;
-    }
-
-    .content p {
-        font-size: 1.2em;
-    }
-
-    footer p {
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 2em;
-    }
-
-    header h2 {
-        font-size: 1.8em;
-    }
-
-    .container {
-        padding: 20px; /* Less padding on smaller screens */
-    }
-
-    .content p {
-        font-size: 1.1em;
-    }
-
-    footer p {
-        font-size: 0.9em;
-    }
-}
-
-/* Animation for the container */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Nikah</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            background: linear-gradient(to bottom, #00c6ff, #0072ff);
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            font-size: 4rem;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .ocean {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 30%;
+            background: url('ocean.jpg') no-repeat center center/cover;
+            animation: wave 10s infinite linear;
+        }
+        .clouds {
+            position: absolute;
+            top: 10%;
+            width: 100%;
+            height: 30%;
+            background: url('clouds.png') no-repeat center center/cover;
+            animation: moveClouds 15s infinite linear;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes wave {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: -1000px 0;
+            }
+        }
+        @keyframes moveClouds {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 1000px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="clouds"></div>
+    <div class="container">
+        <h1>Undangan Pernikahan</h1>
+        <p>Dengan Cinta, Kami Mengundang Anda untuk Bergabung Bersama Kami dalam Merayakan Cinta Abadi</p>
+    </div>
+    <div class="ocean"></div>
+</body>
+</html>
